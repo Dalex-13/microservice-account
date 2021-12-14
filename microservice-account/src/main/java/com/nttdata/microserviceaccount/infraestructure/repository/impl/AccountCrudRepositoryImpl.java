@@ -5,6 +5,7 @@ import com.nttdata.microserviceaccount.domain.Account;
 import com.nttdata.microserviceaccount.infraestructure.model.dao.AccountDao;
 import com.nttdata.microserviceaccount.infraestructure.repository.IAccountCrudRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Component;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -12,8 +13,11 @@ import reactor.core.publisher.Mono;
 @Component
 public class AccountCrudRepositoryImpl implements AccountRepository {
 
+
+
     @Autowired
     private IAccountCrudRepository repository;
+
 
 
     @Override

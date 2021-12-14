@@ -19,14 +19,17 @@ public class AccountController {
 
     @GetMapping
     public Flux<Account> get() {
-        log.info("Listado de usuarios");
+        log.info("Listado de cuentas");
         return accountOperations.queryAll();
     }
 
+
     @GetMapping("/{id}")
     public Mono<Account> getId(@PathVariable String id) {
+        log.info("buscar por id");
         return accountOperations.findId(id);
     }
+
 
     @PostMapping("/add")
     public Mono<Account> post(@RequestBody Account account) {
